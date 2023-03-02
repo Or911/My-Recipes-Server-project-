@@ -1,0 +1,74 @@
+body {
+  background-color: #ffc048;
+}
+
+#page {
+  display: grid;
+  grid-gap: 1vmax;
+  grid-template-columns: repeat(4, 1fr);
+}
+#windowErorr {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background-color: rgba(84, 84, 84, 0.22);
+  left: 50%;
+  right: 50%;
+  display: none;
+}
+#ingredient-input {
+  height: 45px;
+  width: 250px;
+  font-size: large;
+}
+#XofError{
+  color: red;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgba(244, 244, 244, 0.414);
+  position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    padding: 5px;
+
+
+}
+.Recipes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+.cards {
+  padding: 10px;
+  background-color: aliceblue;
+  width: 400px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 9px 13px 20px 1px #000;
+}
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wonder {
+  align-content: center;
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+  padding: 1vmax;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px black;
+}
+
+.visit {
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #3c40c6;
+  align-self: center;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Search for recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <div id="windowErorr">
+      <h1></h1>
+      <h3></h3>
+      <button id="XofError">X</button>
+    </div>
+    <div id="searchBAr">
+      <input type="text" id="ingredient-input" placeholder="ingredient" />
+      <button id="searchbutton">SEARCH</button>
+      <h2>Filters:</h2>
+      <input type="checkbox" id="dairyFilter" /> <span>:dairy</span><br />
+      <input type="checkbox" id="glutenFilter" /> <span>:gluten</span>
+    </div>
+
+    <script id="Recipes-template" type="text/x-handlebars-template">
+      {{#each cards}}
+        <div class="cards" data-id-meal="{{idMeal}}">
+          <h2><a href="{{video}}"> {{title}}</a></h2>
+          <img src="{{thumbnail}}" alt="img" />
+          <h3>ingredients</h3>
+          <div class="ingredients">
+            {{#each ingredients}}
+              <div><li>{{this}}</li></div>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <div class="Recipes-container"></div>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./APIManager.js"></script>
+    <script src="./module.js"></script>
+    <script src="./render.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
