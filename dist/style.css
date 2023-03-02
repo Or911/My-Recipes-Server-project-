@@ -16,6 +16,7 @@ body {
   right: 60%;
   top: 40%;
   display: none;
+  padding: 10px;
 }
 #ingredient-input {
   height: 45px;

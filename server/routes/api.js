@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const APImanagement = require("../.././APImanagement.JS");
-const allergicFilter = require("../.././filterAllergic")
+const APImanagement = require("../Services/APImanagement.JS");
+const allergicFilter = require("../Services/filterAllergic")
 
 
 router.get("/recipes", function (req, res) {
