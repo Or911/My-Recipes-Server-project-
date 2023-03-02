@@ -21,7 +21,6 @@ class APIManager {
       $("#windowErorr").children("h1").text(`Error: ${error.status}`)
       $("#windowErorr").children("h3").text(error.responseJSON.error)
       $("#windowErorr").css("display","block")
-      console.log(error);
     })
   }
 }

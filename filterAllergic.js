@@ -7,7 +7,7 @@ class AllergicFilter {
     this.glutenIngredients = mokData.glutenIngredients;
   }
 
-  dairyIsExesist(recipe) {
+  doesContainDairy(recipe) {
     for (let ingredient of recipe.ingredients) {
       for (let sensitive of this.dairyIngredients) {
         if (ingredient === sensitive) {
@@ -17,7 +17,7 @@ class AllergicFilter {
     }
   }
 
-  glutenIsExesist(recipe) {
+  doesContainGluten(recipe) {
     for (let ingredient of recipe.ingredients) {
       for (let sensitive of this.glutenIngredients) {
         if (ingredient === sensitive) {
@@ -30,10 +30,10 @@ class AllergicFilter {
   filterRecipesByIngredients(recipes, dairy, gluten) {
     let newRecipes = recipes.filter((recipe) => {
       if (dairy) {
-        return !this.dairyIsExesist(recipe);
+        return !this.doesContainDairy(recipe);
       }
       if (gluten) {
-        return !this.glutenIsExesist(recipe);
+        return !this.doesContainGluten(recipe);
       }
       return recipes;
     });
