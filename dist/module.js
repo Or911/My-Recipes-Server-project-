@@ -14,7 +14,7 @@ const checkNumOfRecipes = function (page) {
 const checkGlutenFilter = function () {
   let glutenCheck = $("#glutenFilter").is(":checked");
   if (glutenCheck) {
-    return `gluten=${glutenCheck}`;
+    return `&gluten=${glutenCheck}`;
   }
   return "";
 };
