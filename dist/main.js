@@ -1,13 +1,25 @@
 const APImanager = new APIManager();
 const render = new Render();
 
-$("#searchbutton").on("click", function () {
-  let input = $("#ingredient-input").val();
-  let queryFilter = checkSensitivities();
-  APImanager.getRecipes(input, queryFilter).then((data) => {
+let inputIngredient = "";
+
+const callAPI = function (inputIngredient) {
+  let queryFilter = addQuery();
+  APImanager.getRecipes(inputIngredient, queryFilter).then((data) => {
     render.RecipesRender(data);
-    $("#ingredient-input").val("");
   });
+};
+
+$("#searchbutton").on("click", function () {
+  inputIngredient = $("#ingredient-input").val();
+  numPage = 1;
+  callAPI(inputIngredient);
+  $("#ingredient-input").val("");
+});
+
+$("#pagination-container").on("click", ".pagination-button", function () {
+  checkNumOfRecipes($(this).attr("id"));
+  callAPI(inputIngredient);
 });
 
 $(".Recipes-container").on("click", "img", function () {
