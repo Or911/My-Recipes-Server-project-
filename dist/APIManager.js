@@ -12,8 +12,8 @@ class APIManager {
       method: "GET",
       url: `/recipes/${input}${queryFilter}`,
     })
-      .then((recipes) => {
-        this.data = recipes;
+      .then((data) => {
+        this.data = data;
         return this.data;
       })
       .catch((error) => {

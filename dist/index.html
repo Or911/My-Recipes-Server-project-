@@ -27,7 +27,7 @@
     </div>
 
     <script id="Recipes-template" type="text/x-handlebars-template">
-      {{#each cards}}
+      {{#each cards.recipes}}
         <div class="cards" data-id-meal="{{idMeal}}">
           <h2><a href="{{video}}"> {{title}}</a></h2>
           <img src="{{thumbnail}}" alt="img" />
@@ -43,9 +43,9 @@
 
     <div class="Recipes-container"></div>
 
-    <div id="pagination-container">
-      <button class="pagination-button" id="Previous">< Previous page</button>
-      <button class="pagination-button" id="next">Next page ></button>
+      
+      <div id="pagination-container"></div>
+      
     </div>
 
     <script src="./jquery/dist/jquery.js"></script>

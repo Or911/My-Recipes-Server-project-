@@ -17,8 +17,10 @@ router.get("/recipes/:ingredient", function (req, res) {
   APImanagement.getRecipes(ingredient).then((recipes) => {
     let RecipesFiltered = allergicFilter.filterRecipesByIngredients(recipes, dairy, gluten);
     let recipesPage = SortedPage(RecipesFiltered, pageSize);
+    let pages = recipesPage.length
     if (recipesPage[numPage]) {
-      res.send(recipesPage[numPage]);
+      let send = {recipes: recipesPage[numPage] , pages}
+      res.send(send);
     }
   });
 });

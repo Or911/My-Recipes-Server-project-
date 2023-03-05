@@ -1,12 +1,13 @@
 const APImanager = new APIManager();
 const render = new Render();
-
+let statusPage = 1;
 let inputIngredient = "";
 
 const callAPI = function (inputIngredient) {
-  let queryFilter = addQuery();
+  let queryFilter = addQuery(statusPage);
   APImanager.getRecipes(inputIngredient, queryFilter).then((data) => {
     render.RecipesRender(data);
+    render.paginationBar(data);
   });
 };
 
@@ -18,7 +19,12 @@ $("#searchbutton").on("click", function () {
 });
 
 $("#pagination-container").on("click", ".pagination-button", function () {
-  checkNumOfRecipes($(this).attr("id"));
+  changepageOfPagination($(this).attr("id"));
+  callAPI(inputIngredient);
+});
+
+$("#pagination-container").on("click", ".pagination-numbers", function () {
+  changePageOfPaginationByNum($(this).attr("id"));
   callAPI(inputIngredient);
 });
 

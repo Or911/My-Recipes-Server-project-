@@ -1,15 +1,24 @@
 let pageSize = 4;
 let numPage = 1;
 
-const checkNumOfRecipes = function (page) {
-  if (page === "next") {
-    numPage++;
-  }
-  if (page === "Previous") {
-    numPage--;
-  }
+const queryPageNum = function () {
+
   return `?pageNumber=${numPage}&pageSize=${pageSize}`;
 };
+
+const changepageOfPagination = function (page){
+  
+  if (page == "next") {
+    numPage++;
+  }
+  if (page == "Previous") {
+    numPage--;
+  }
+
+}
+const changePageOfPaginationByNum = function (page){
+  numPage = parseInt(page)
+}
 
 const checkGlutenFilter = function () {
   let glutenCheck = $("#glutenFilter").is(":checked");
@@ -29,9 +38,9 @@ const checkDairyFilter = function (queryFilter) {
   return "";
 };
 
-const addQuery = function () {
+const addQuery = function (statusPage) {
   let Filter = ``;
-  Filter += checkNumOfRecipes();
+  Filter += queryPageNum();
   Filter += checkGlutenFilter();
   Filter += checkDairyFilter(Filter);
   return Filter;
