@@ -30,7 +30,7 @@ $("#pagination-container").on("click", ".pagination-numbers", function () {
 
 $(".Recipes-container").on("click", "img", function () {
   let idMealOfCard = $(this).parent().data("id-meal");
-  let recipes = APImanager.data;
+  let recipes = APImanager.data.recipes
   let recipeById = recipes.find((recipe) => recipe.idMeal == idMealOfCard);
   alert(recipeById.ingredients[0]);
 });
@@ -38,3 +38,8 @@ $(".Recipes-container").on("click", "img", function () {
 $("#windowErorr").on("click", "button", function () {
   $("#windowErorr").css("display", "none");
 });
+
+$(".checkbox").on("click" , function(){
+  callAPI(inputIngredient)
+  console.log( $(this).attr("id"))
+})

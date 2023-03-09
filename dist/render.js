@@ -11,6 +11,9 @@ class Render {
   }
   paginationBar(data) {
     $("#pagination-container").empty();
+    if (!data){
+      return
+    }
     $("#pagination-container").append(
       `<button class="pagination-button" id="Previous">< Previous page</button>`
     );

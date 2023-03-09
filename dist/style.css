@@ -36,18 +36,18 @@ body {
 }
 .Recipes-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 img {
   height: 100px;
   width: 100px;
 }
-#pagination-nambers{
+#pagination-nambers {
   display: inline;
 }
 
-.pagination-numbers{
+.pagination-numbers {
   margin: 5px;
 }
 .cards {
@@ -78,4 +78,17 @@ img {
   cursor: pointer;
   color: #3c40c6;
   align-self: center;
+}
+@keyframes apeer {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+.Recipes-container .cards {
+  animation-name: apeer;
+  animation-duration: 2s;
 }
